@@ -14,8 +14,6 @@ import {loadCourses} from './actions/courseActions';
 import {loadAuthors} from './actions/authorActions';
 //import HomePage from './components/home/HomePage';
 //import './styles/styles.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../node_modules/toastr/build/toastr.min.css';
 
 //generally pass initial state as default parameters in each of the reducers..., pass initial state in configure store
 //if server sends some data or fields that need to filled up before app starts off.
@@ -38,5 +36,6 @@ ReactDOM.render (<Provider store={store} >
   </Provider>,document.getElementById('app')
 );
 //ReactDOM.render(<HomePage/>,document.getElementById('app'));
+
 
 
