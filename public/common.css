@@ -1,0 +1,367 @@
+
+td
+{
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+}
+.disabled {
+    background: #dddddd !important;
+}
+.disabled:hover {
+    background: #dddddd !important;
+}
+
+.document-loder{
+	position: absolute;
+    margin: 0 auto;
+    top: 40%;
+    left: 30%;
+    right: 30%;
+    z-index: 1002;
+}
+.document-loder-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f3f3f3;
+    opacity: 0.4;
+    z-index: 1001;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    z-index: 9999;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    border: 1px solid #999;
+    font-size: 18px;
+    border-radius: 37px;
+    box-shadow: 0px 0px 200px #999;
+}
+#back-to-top:hover {
+    background: #e9ebec;
+}
+#back-to-top.show {
+    opacity: 1;
+}
+#content {
+    height: 2000px;
+}
+.paginationLoader{
+    display: none;
+    text-align: center;
+    margin: 10px 0 0;
+}
+#alertBox {
+	position: fixed;
+	top:4%;
+    right:40%;
+    z-index:99;
+}
+.alertLayer{
+   position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    /* margin: 6% auto; */
+    right: 0%;
+    z-index: 99;
+    background: rgba(95, 96, 97, 0.49);
+}
+.admin-ondemand {
+	background: #fff;
+    height: 3pc;
+    margin-top: 2px;
+    font-size: large;
+    padding: 4px;
+    text-align: center;
+    line-height: 48px;
+}
+.bellNotify {
+	width: 22px;
+    margin-left: 2%;
+    top:64px;
+    position: absolute;
+}
+
+/* =Styles for the lab
+-------------------------------------------------------------- */
+#wrapper {
+	min-width:1000px;
+}
+nav {
+	    margin: 0px 8%;
+    background-color: #fff;
+    padding: 0px 0;
+    width: 50%;
+}
+
+nav ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+nav ul li {
+    display:inline-block;
+    position:relative;
+}
+
+/* sub navigation */
+nav li ul {
+  background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 200px;
+    box-shadow: 1px 2px 1px 1px #a2a2a2;
+}
+nav li li {
+    position:relative;
+    margin:0;
+    display:block;
+}
+nav li li ul {
+    position:absolute;
+    top:0;
+    left:200px; /* make this equal to the width of the sub nav above */
+    margin:0;
+}
+
+/* style all links */
+nav a {
+    line-height:40px;
+    padding:0 12px;
+    margin:0 12px;
+}
+nav a {
+  color: #1b89cb;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+
+}
+nav a:hover,
+nav a:focus,
+nav a:active {
+   text-decoration: none;
+}
+
+/* style sub level links */
+nav li li a {
+    border-bottom: solid 1px rgb(210, 210, 210);
+    margin: 0 10px;
+    padding: 0;
+}
+nav li li:last-child a {
+    border-bottom:none;
+}
+
+/* hide sub menu links */
+ul.sub-menu {
+    display:none;
+}
+.dropdown{
+    z-index:99;
+}
+
+/* show arrows for dropdowns */
+nav li.dropdown > a {
+    background-image:url('../img/arrow-down.png');
+    background-position:right 20px;
+    background-repeat:no-repeat;
+
+}
+
+nav li li.dropdown > a {
+    background-image:url('../img/arrow-right.png');
+    background-position:right 16px;
+    background-repeat:no-repeat;
+}
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img {
+	border: none;
+}
+
+
+
+
+/* =Global
+-------------------------------------------------------------- */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    background-color:rgb(50,50,50);
+    color:rgb(50,50,50);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:300;
+    font-size:16px;
+    line-height:1.5;
+}
+
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	line-height:1;
+	font-weight: 300;
+}
+a {
+    text-decoration:none;
+    color:rgb(100,150,200);
+}
+a:hover {
+    color:rgb(50,50,50);
+}
+
+
+
+/* =Template
+-------------------------------------------------------------- */
+#wrapper {
+    width:100%;
+    margin:0 auto;
+}
+
+#main {
+	background-color:#fff;
+	padding:30px 0;
+}
+.content {
+    width:100%;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+
+/* =Top Bar
+-------------------------------------------------------------- */
+#top-bar {
+	background-color:rgb(100,150,200);
+}
+#top-bar a {
+	color:#fff;
+	font-size:14px;
+	text-transform:uppercase;
+	display:inline-block;
+	margin:0;
+	padding:10px;
+}
+#top-bar a:hover{
+	background-color:rgb(150,200,250);
+}
+span.all-labs,
+span.back-to-tutorial {
+	display:block;
+	width:50%;
+}
+span.all-labs {
+	float:left;
+	text-align:left;
+}
+span.back-to-tutorial {
+	float:right;
+	text-align:right;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+header {
+	padding:30px 0;
+}
+#title {
+	width:100%;
+	text-align:center;
+}
+#title h1 {
+	color:#fff;
+	font-size: 30px;
+	margin-bottom:10px;
+}
+#title h2 {
+	color:rgb(200,200,200);
+	font-size:20px;
+
+}
+
+
+
+
+
+/* =Footer
+-------------------------------------------------------------- */
+footer {
+
+}
+
+
+
+
+/* =Extras
+-------------------------------------------------------------- */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}

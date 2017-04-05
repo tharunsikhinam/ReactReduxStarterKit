@@ -6,35 +6,37 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, browserHistory,hashHistory} from 'react-router';
+
 import configureStore from './store/configureStore';
-import {Provider} from 'react-redux';
-import routes from './routes';
-import {loadCourses} from './actions/courseActions';
+
+
+import HomePage from './components/CodLedger/HomePage';
+import GenerateManifest from './components/GenerateManifest/GenerateManifestHome';
+//export default GenerateManifest;
+
 import {loadAuthors} from './actions/authorActions';
-//import HomePage from './components/home/HomePage';
-//import './styles/styles.css';
 
 //generally pass initial state as default parameters in each of the reducers..., pass initial state in configure store
 //if server sends some data or fields that need to filled up before app starts off.
 
 
 
-const store = configureStore();
+
  //load a part of the store by dispatching actions.. here loadcourses is an action form courseactions js
 //loadcourses does an ajax call and sends the data to an action creator, which goes to a reducer and ......
 
 
 //debugger;
-store.dispatch(loadAuthors());
-
+//console.log(document.getElementById("userId").value);
+//let apiHost= document.getElementById("apiHost").value;
 
 
 //Provider is used to connect the react components to the redux store
-ReactDOM.render (<Provider store={store} >
-      <Router history={hashHistory} routes={routes} />
-  </Provider>,document.getElementById('app')
+ReactDOM.render (<HomePage userId="41"
+                           apiHost="http://localhost:4949"
+                           userType="USER"/>,document.getElementById('appTest')
 );
+
 //ReactDOM.render(<HomePage/>,document.getElementById('app'));
 
 

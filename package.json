@@ -4,23 +4,30 @@
   "description": "Starter kit for React and Redux Pluralsight course by Cory House",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "babel-node tools/srcServer.js"
-
+    "start": "babel-node tools/srcServer.js",
+    "build": "webpack --production --verbose --colors --display-error-details --config ./webpack.config.prod.js"
   },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-cli": "^6.8.0",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
+    "css-loader": "^0.23.1",
     "jquery": "2.2.3",
-    "react": "15.0.2",
-    "react-dom": "15.0.2",
+    "moment": "^2.17.1",
+    "react": "^15.2.0",
+    "react-bootstrap": "^0.30.8",
+    "react-bootstrap-date-picker": "^4.0.0",
+    "react-bootstrap-table": "^3.1.0",
+    "react-dom": "^15.2.0",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
+    "style-loader": "^0.13.1",
     "toastr": "2.1.2"
   },
   "devDependencies": {
@@ -59,7 +66,8 @@
     "url-loader": "0.5.7",
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
-    "webpack-hot-middleware": "2.10.0"
+    "webpack-hot-middleware": "2.10.0",
+    "write-file-webpack-plugin": "^4.0.0"
   },
   "repository": {
     "type": "git",

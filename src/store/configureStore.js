@@ -11,6 +11,5 @@ import logger from 'redux-logger';
 //one can add middlewares as well . done using applymiddleware (mw1(), mw2()..)
 export default function configureStore(initialState)
 {
-  return createStore( rootReducer, initialState, compose(applyMiddleware(thunk, reduxImutableStateVariant(),logger()),
-    window.devToolsExtension ? window.devToolsExtension() : undefined ));
+  return createStore( rootReducer, initialState, compose(applyMiddleware(thunk, reduxImutableStateVariant())));
 }

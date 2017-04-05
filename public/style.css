@@ -1,3 +1,13 @@
+
+
+.ticTable td{
+  padding: 20px;
+  border-right-style: groove;
+}
+.ticTable td{
+
+}
+
 @charset "UTF-8";
 /*
   Icon Font: quikr-icons
@@ -4592,7 +4602,7 @@ select[multiple].input-lg,
 }
 /* line 32, ../sass/bootstrap/_buttons.scss */
 .btn:hover, .btn:focus, .btn.focus {
-  color: #fff;
+  color: black;
   text-decoration: none;
 }
 /* line 39, ../sass/bootstrap/_buttons.scss */

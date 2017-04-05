@@ -29,7 +29,12 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 //first file to be sent as response
-app.get('*', function(req, res) {
+app.get('/bundle', function(req, res) {
+//console.log("reaching here  ");
+  res.sendFile(path.join( __dirname, '../dist/bundle.js'));
+});
+
+app.get('/home', function(req, res) {
 //console.log("reaching here  ");
   res.sendFile(path.join( __dirname, '../src/index.html'));
 });

@@ -16,6 +16,8 @@ const Header = ({time}) =>
         <Link to="/courses" activeClassName="active">Courses</Link>
         {" | "}
         <Link to="/about" activeClassName="active">About</Link>
+        {"|"}
+        <Link to="/tictactoe" activeClassName="active">Tic Tac Toe</Link>
       {time && <LoadingDots  dots={20}/>}
 
 
