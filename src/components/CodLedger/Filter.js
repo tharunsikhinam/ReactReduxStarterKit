@@ -115,19 +115,14 @@ class Filter extends React.Component {
                      style={{marginLeft: 0,marginRight: 0,paddingLeft: 0,maginRight: 0}}
                 >
                   <h3 className="lable-txt">&nbsp;</h3>
-                  <button
-                    style={{height: '32px'}}
+                  {this.props.isPending? <button
+                    style={{height: '32px',display: 'inherit'}}
                     className="admin-btn-blue"
                     onClick={()=>{
-                      let type = null;
-                      Object.keys(this.state.tabs).map((node)=> {if(this.state.tabs[node]==true)
-                        type=node;})
-                      let requestObject = {fromDate: this.state.fromDate.substr(0,10),
-                        toDate: this.state.toDate.substr(0,10),
-                        type: type};
-                      this.props.submit(requestObject);
+                    this.props.onTransferAmount();
                     }}
-                    id="searchBtn">Transfer Amount</button>&nbsp;&nbsp;
+                    id="searchBtn">Transfer Amount</button>:null}
+                  &nbsp;&nbsp;
 
                 </div>
 

@@ -28,12 +28,19 @@ import {loadAuthors} from './actions/authorActions';
 
 //debugger;
 //console.log(document.getElementById("userId").value);
-//let apiHost= document.getElementById("apiHost").value;
+let apiHost= document.getElementById("apiHost").value;
+let userId = document.getElementById("userId").value;
+let email = document.getElementById("username").value;
+
+
+let otpClientId=document.getElementById("otpClientId").value;
 
 
 //Provider is used to connect the react components to the redux store
 ReactDOM.render (<HomePage userId="41"
-                           apiHost="http://localhost:4949"
+                           email="abc"
+                           apiHost="http://logisti"
+                           otpClientId={otpClientId}
                            userType="USER"/>,document.getElementById('appTest')
 );
 

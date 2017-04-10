@@ -20,7 +20,7 @@ class CodLedgerTable extends React.Component {
 
     constructor() {
       super();
-      this.state={checked: {}}
+      this.state={checked: {},touch: false}
       this.onExportToCSV = this.onExportToCSV.bind(this);
 
     }
@@ -39,18 +39,8 @@ class CodLedgerTable extends React.Component {
       >Export</button>
     );
   }
-  componentWillReceiveProps(props)
-  {
-    if(props.isPending == true)
-    {
-      let data = this.props.data;
-      let status = {};
-      data.map((node)=>{
-        status[node.id] = false;
-      });
-      this.setState({status: status})
-    }
-  }
+
+
 
     render() {
       const options = {
@@ -58,6 +48,7 @@ class CodLedgerTable extends React.Component {
         exportCSVBtn: this.createCustomExportCSVButton,
         paginationShowsTotal: true  // Enable showing total text
       };
+      console.log(this.state);
         return (
           <BootstrapTable data={this.props.data}
                                 maxHeight={"1000px"}
@@ -84,14 +75,24 @@ class CodLedgerTable extends React.Component {
                                   return <input
                                     key={cell}
                                     onChange={()=>{
+
                                       var checked = this.state.checked;
-                                      checked[cell] = !this.state.checked[cell];
-                                      this.setState({checked: checked});
+                                      console.log(checked);
+                                      console.log(cell)
+                                      try {
+                                        checked[cell] = !this.state.checked[cell];
+                                        this.props.selectTransactions(checked);
+                                        console.log(checked);
+                                        this.setState({checked: checked,touch: true});
+                                      }
+                                      catch(error)
+                                      {
+                                        console.log(error);
+                                      }
                                     }}
                                     type="checkbox" checked={this.state.checked[cell]}/>
                                 }}
                                 >&nbsp;</TableHeaderColumn>
-
             <TableHeaderColumn  width={"15"}
 
                                 tdStyle={{fontFamily: "font-family: 'Century Gothic', CenturyGothic, Geneva, AppleGothic, sans-serif;"}}

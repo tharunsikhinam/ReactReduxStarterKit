@@ -36,7 +36,7 @@ class Search extends React.Component {
                       }}    >
                 <option value='' selected='selected' disabled>Select Hub</option>
                 {this.props.hubs.map((hub)=>{
-                  return <option value={hub.id} >{hub.name}</option>;
+                  return <option key={hub.id} value={hub.id} >{hub.name}</option>;
                 })}
               </select>
             </div>
@@ -48,10 +48,14 @@ class Search extends React.Component {
 
               }} className="select-dorpdown" id="hubDD">
                 <option value='' selected='selected' disabled={true}>Select Vendor</option>
-                {this.props.vendors.map((vendor)=>{
-                  return <option value={vendor.id}>{vendor.name}</option>
+                {this.props.vendors.map((hub)=>{
+                  console.log(hub);
+                  if(hub.name=='gati')
+                  return <option key={hub.id} value={hub.id} >{hub.name}</option>;
+                  else return ;
+
                 })}
-              </select>
+               </select>
             </div>
             <div className="select-category" >
               <button id="search"

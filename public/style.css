@@ -1,4 +1,7 @@
-
+.modal-backdrop.in
+{
+  opacity: 0.8; !important;
+}
 
 .ticTable td{
   padding: 20px;
@@ -7,6 +10,9 @@
 .ticTable td{
 
 }
+
+
+
 
 @charset "UTF-8";
 /*
@@ -28,6 +34,13 @@
 /* line 23, ../sass/custom/_quikr-icons.scss */
 [data-icon]:before {
   content: attr(data-icon);
+}
+
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
 }
 
 /* line 25, ../sass/custom/_quikr-icons.scss */

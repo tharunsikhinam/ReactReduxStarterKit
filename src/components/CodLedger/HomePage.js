@@ -94,17 +94,42 @@ class HomePage extends React.Component
   constructor(props)
   {
     super(props);
-    this.state= {message: "Quikr HRMS",flag: true,
-       data: [],credit: [],debit: [],all: [],pending: [],isPending: false,transactions: []};
+    this.state= {message: "Quikr HRMS",flag: true,openModal: false,
+       data: [],credit: [],debit: [],all: [],pending: [],isPending: false,transactions: [],selectedTransactions: []};
     this.handleTypeChange = this.handleTypeChange.bind(this);
     this.search = this.search.bind(this);
     this.getPendingTransactions = this.getPendingTransactions.bind(this);
     this.selectTransactions = this.selectTransactions.bind(this);
+    this.onTransferAmount = this.onTransferAmount.bind(this);
+    this.closeTransferAmount = this.closeTransferAmount.bind(this);
   }
 
   selectTransactions(transactions)
   {
     this.setState({transactions: transactions});
+  }
+  onTransferAmount()
+  {
+    console.log("button clicked");
+    console.log(this.state);
+    let pendingTransactions = this.state.pending;
+    let selectedTransactions = pendingTransactions.filter((node)=>{
+      if(this.state.transactions[node.transactionId]==true)
+        return true;
+    });
+    if(selectedTransactions.length<=0) {
+      toastr.info("Select Transactions")
+      return;
+    }
+
+    console.log(selectedTransactions);
+    this.setState({openModal: true,selectedTransactions: selectedTransactions})
+  }
+  closeTransferAmount(checked)
+  {
+    this.getPendingTransactions();
+   // this.selectTransactions(checked);
+    setTimeout(()=>{this.setState({openModal: false,transactions: checked});},1000);
   }
 
 
@@ -197,33 +222,11 @@ class HomePage extends React.Component
   search(requestObject)
   {
     this.handleTypeChange(requestObject.type,requestObject);
-    /*console.log(requestObject);
-    let requestQuery = "userId=41&"+"userType=USER&"+"fromDate="+requestObject.fromDate+"&toDate="+requestObject.toDate;
-    axios.get("http://192.168.124.55:4949/tms/v1/codPayment/getAllTransactions?"+requestQuery,
-      {headers:{'X-Quikr-Client': 'falcon.api', 'Content-Type': 'application/json'}
-
-      }).then((response)=>{
-      console.log(response.data.transactions);
-      let transactions = response.data.transactions;
-      let credit= [],debit =[],pending=[];
-      transactions.map((node)=>{
-        if(node.transactionType=='CREDIT')
-          credit.push(node);
-        else if(node.transactionType=='DEBIT')
-          debit.push(node);
-      });
-      this.setState({data: transactions,all: transactions,credit: credit,debit: debit});
-      this.handleTypeChange(requestObject.type,requestObject);
-
-    }).catch((error)=>{
-      console.log(error);
-    })*/
-
-
   }
 
   render()
   {
+     
     const style={
       backgroundColor: 'black'
     };
@@ -238,18 +241,24 @@ class HomePage extends React.Component
           isPending={this.state.isPending}
           submit={this.search}
           handleTypeChange={this.handleTypeChange}
-          transactions={this.state.transactions}
+          onTransferAmount = {this.onTransferAmount}
+
         />
         </div>
 
-        {this.state.isPending?
+        {this.state.openModal?
           <OTPModal
+            open={this.state.openModal}
+            checked={this.state.transactions}
+            transactions={this.state.selectedTransactions}
+            close={this.closeTransferAmount}
             {...this.props}
 
           />:null}
 
          <div className="col-md-12" style={{padingLeft: 0,paddingRight: 0}}>
           <CodLedgerTable
+            key={this.state.isPending+"abc"}
             selectTransactions={this.selectTransactions}
             isPending={this.state.isPending}
             data={this.state.data}/>
