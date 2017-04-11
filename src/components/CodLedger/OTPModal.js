@@ -49,8 +49,11 @@ class OTPModal extends React.Component {
               </Modal.Header>
               <Modal.Body style={{backgroundColor: 'white',opacity: '1'}}>
 
-                <h3>Select User or Bank</h3>
 
+
+
+
+                <h3>Select User or Bank</h3>
                 <select value={this.state.selected}
                         onChange={(selected )=>{
                           //console.log(JSON.stringify(selected.target.value));

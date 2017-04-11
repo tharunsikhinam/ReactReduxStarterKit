@@ -8,7 +8,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import configureStore from './store/configureStore';
-
+import TransferAmount from './components/CodLedger/TransferAmount';
 
 import HomePage from './components/CodLedger/HomePage';
 import GenerateManifest from './components/GenerateManifest/GenerateManifestHome';
@@ -37,11 +37,11 @@ let otpClientId=document.getElementById("otpClientId").value;
 
 
 //Provider is used to connect the react components to the redux store
-ReactDOM.render (<HomePage userId="41"
-                           email="abc"
-                           apiHost="http://logisti"
+ReactDOM.render (<TransferAmount userId={userId}
+                           email={email}
+                           apiHost={apiHost}
                            otpClientId={otpClientId}
-                           userType="USER"/>,document.getElementById('appTest')
+                           userType="USER"/>,document.getElementById('transferAmount')
 );
 
 //ReactDOM.render(<HomePage/>,document.getElementById('app'));

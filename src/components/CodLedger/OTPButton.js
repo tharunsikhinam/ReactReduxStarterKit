@@ -29,8 +29,9 @@ class OTPButton extends React.Component {
           bank =true;
       }
       let transactions =[];
-      this.props.transactions.map((node)=>{
-        transactions.push(node.transactionId);
+      this.props.checked.map((node,index)=>{
+        if(node)
+        transactions.push(this.props.transactions[index].transactionId);
       });
       let requestObject =
       {
@@ -143,7 +144,7 @@ class OTPButton extends React.Component {
 
         return (
           <div>
-
+            <br/>
             {this.state.generateOtp?
               <div style={{width: '50%',textAlign: 'center',margin: "auto"}}>
                 <h4>Enter OTP</h4>
