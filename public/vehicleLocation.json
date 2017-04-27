@@ -1,0 +1,10 @@
+{"vehicleLocations":[
+  {"driverId":12345,"vehicleType":"TATA ACE1","location":{"lat":"13.0611814","lon":"77.6243157"},
+    "updatedTimestamp":1492579314000},
+  {"driverId":12346,"vehicleType":"TATA ACE2","location":{"lat":"13.0721814","lon":"77.5243157"},
+    "updatedTimestamp":1492579314000},
+  {"driverId":12347,"vehicleType":"TATA ACE3","location":{"lat":"13.0891814","lon":"77.5234157"},
+    "updatedTimestamp":1492579314000},
+  {"driverId":12348,"vehicleType":"TATA ACE4","location":{"lat":"13.0922314","lon":"77.4568201"},
+    "updatedTimestamp":1492579314000}
+]}

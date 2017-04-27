@@ -1,0 +1,5 @@
+[
+  {"driverId":12345,"driverName":"Driver Name","driverMobile":"9876543210","vehicleType":"TATA ACE1","tripsCount":2},
+  {"driverId":12346,"driverName":"Driver Name","driverMobile":"9876543210","vehicleType":"TATA ACE2","tripsCount":2},
+  {"driverId":12347,"driverName":"Driver Name","driverMobile":"9876543210","vehicleType":"TATA ACE3","tripsCount":2},
+  {"driverId":12348,"driverName":"Driver Name","driverMobile":"9876543210","vehicleType":"TATA ACE4","tripsCount":2}]

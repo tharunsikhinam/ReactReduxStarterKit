@@ -1,0 +1,9 @@
+{"assignedTrips":[
+  {"type":"PICKUP",
+    "orderId":"ODBAN-08798-HGTDS",
+    "slot":{"startTime":"10:00:00","endTime":"12:00:00"},
+    "address":{"userName":"User Name","address":"Flat-005, Sowmya sarovar, Rachenhalli","mobileNo":"9876543210","email":"nandu.yadav@quikr.com","pincode":"560077","cityName":"Bangalore","landmark":null,"longitude":"77.6993157","latitude":"13.0611814","orderId":null,"userType":null,"isNonContactable":null,"isLiftAvailable":null,"floorNumber":null,"stairLength":null,"stairWidth":null,"isItemFitForStair":null,"schedulingDetails":null,"usernameToDisplay":"User Name"}},
+  {"type":"PICKUP",
+    "orderId":"ODBAN-08798-HGTxS",
+    "slot":{"startTime":"10:00:00","endTime":"12:00:00"},
+    "address":{"userName":"User Name","address":"Flat-005, Sowmya sarovar, Rachenhalli","mobileNo":"9876543210","email":"nandu.yadav@quikr.com","pincode":"560077","cityName":"Bangalore","landmark":null,"longitude":"77.6003157","latitude":"13.0011814","orderId":null,"userType":null,"isNonContactable":null,"isLiftAvailable":null,"floorNumber":null,"stairLength":null,"stairWidth":null,"isItemFitForStair":null,"schedulingDetails":null,"usernameToDisplay":"User Name"}}]}
