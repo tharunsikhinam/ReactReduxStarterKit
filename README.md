@@ -13,37 +13,69 @@ Clone the repository and in the root directory of the app.
 1.Install all node packages
 >npm install
 
-2. Start the application in dev mode. 
+2.Start the application in dev mode. 
 >npm start 
 
-The Application runs on localhost:3002
+The Application runs on localhost:3002 
+
 localhost:3002/show -> Home Page
+
 localhost:3002/bundle -> bundled javascript file (use this in as script src in FMS project)
 
 Example: 
 <script src="http://localhost:3002/bundle"  type="text/javascript"></script>
 
-3. Go to src/index.js and choose which component has to be rendered. All components are mentioned in index.js files, comment out the component that needs to be used and mount it on an appropriate div id in the HTML file.
+3.Go to src/index.js and choose which component has to be rendered.
+All components are mentioned in index.js files, comment out the component that needs to be used and mount it on an appropriate div id in the HTML file.
 
 Example:
+<code>
+/*
+//Gati Generate Manifest Page
+ReactDOM.render(<GenerateManifest/>,document.getElementById("appTest"));
+*/
 
+/*
+//Fleet management system. 
+let store = configureStore();
+ReactDOM.render (  
+ <MuiThemeProvider >
+  <Provider store={store}>
+   <MapHome/>
+  </Provider>
+ </MuiThemeProvider>,document.getElementById('appTest'));
+*/
+</code>
 
+4.(.babelrc configuration for Hot Module Reloading)
+In dev mode
+.babelrc 
+<code>
+{
+  "presets": ["react", "es2015","stage-2"],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}
+</code>
 
+In prod mode
+<code>
+{
+  "presets": ["react", "es2015","stage-2"]
+}
+</code>
+ 
 
+Production
+1.To build and generate the compiled javascript file.
+>npm run build
 
-
-
-
-
-
-
-
-
-
-
-
->npm start
-
->the application starts on port number 3002
+bundle.js is generated in dist folder. Copy this file in TMS project, under public/javascripts/<filename>.js
+Include this file in the HTML
+Example:
+ <script src="@assets.RemoteAssets.getUrl("javascripts/<filename>.js")" type="text/javascript"></script>
 
 
