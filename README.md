@@ -11,26 +11,22 @@ Make sure the latest versions of node and npm are installed. <br/>
 Clone the repository and in the root directory of the app.<br/>
 <br/>
 <br/>
-1.Install all node packages
+1)Install all node packages
 <br/>
 >npm install
 
-2.Start the application in dev mode. <br/>
+2)Start the application in dev mode. <br/>
 
 >npm start 
 
 The Application runs on localhost:3002 <br/>
-
 localhost:3002/show -> Home Page<br/>
 localhost:3002/bundle -> bundled javascript file (use this in as script src in FMS project)<br/>
 <br/>
-
 Example: 
-<br/>
-
 <code>&lt;script src="http://localhost:3002/bundle"  type="text/javascript"&gt;&lt;/script&gt;</code>
 
-3.Go to src/index.js and choose which component has to be rendered.
+3)Go to src/index.js and choose which component has to be rendered.
 All components are mentioned in index.js files, comment out the component that needs to be used and mount it on an appropriate div id in the HTML file.
 
 Example:
@@ -39,20 +35,20 @@ Example:
 //Gati Generate Manifest Page
 ReactDOM.render(&lt;GenerateManifest/&gt;,document.getElementById("appTest"));
 */
-
 /*
 //Fleet management system. 
 let store = configureStore();
-ReactDOM.render (  &lt;MuiThemeProvider &gt;
-  &lt;Provider store={store}&gt;
-   &lt;MapHome/&gt;
-  &lt;/Provider&gt;
- &lt;/MuiThemeProvider&gt; ,document.getElementById('appTest'));
+ReactDOM.render (  &lt;MuiThemeProvider &gt; <br/>
+  &lt;Provider store={store}&gt; <br/>
+   &lt;MapHome/&gt; <br/>
+  &lt;/Provider&gt; <br/>
+ &lt;/MuiThemeProvider&gt; ,document.getElementById('appTest')); <br/>
 */
 </code>
 <br/>
 <br/>
-4.(.babelrc configuration for Hot Module Reloading)
+4).babelrc configuration for Hot Module Reloading)
+<br/>
 In dev mode
 .babelrc  
 <br/>
@@ -78,7 +74,7 @@ In prod mode
 
 Production<br/>
 
-1.To build and generate the compiled javascript file.<br/>
+1)To build and generate the compiled javascript file.<br/>
 >npm run build
 <br/>
 <br/>
